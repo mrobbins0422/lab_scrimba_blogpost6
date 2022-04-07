@@ -39,13 +39,12 @@ document.getElementById("new-post").addEventListener("submit", function(e) {
     fetch("https://apis.scrimba.com/jsonplaceholder/posts", options)
         .then(res => res.json())
         .then(post => {
-            /**
-             * Challenge: Use our new renderPosts function to clean up this code.
-             * 
-             * Don't forget to update the postsArray variable first!
-             */
             postsArray.unshift(post)
             renderPosts()
+            /**
+             * Challenge: clear the form out!
+             */
+            document.getElementById("new-post").reset()
         })
 })
-
+// first challenge point
